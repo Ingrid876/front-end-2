@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
 
 interface NavbarProps {
-  onLogout: () => void; // Only required prop
+  onLogout: () => void;
 }
 
 function Navbar({ onLogout }: NavbarProps) {
@@ -17,13 +17,15 @@ function Navbar({ onLogout }: NavbarProps) {
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/admin/dashboard">Dashboard</Link>
+          <Link to="./components/Dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to="/admin/settings">Settings</Link>
+          <Link to="./components/Settings">Settings</Link>
         </li>
         <li>
-          <a onClick={handleLogout}>Logout</a>
+          <button onClick={handleLogout} className="logout-button">
+            Logout
+          </button>
         </li>
       </ul>
     </nav>

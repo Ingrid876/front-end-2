@@ -8,6 +8,7 @@ import CitizenRegister from './components/CitizenRegister';
 import CitizenDashboard from './components/CitizenDashboard';
 import Login from './components/Login';
 import Signup from './components/Signup'; // New import
+import ResponderDashboard from './components/ResponderDashboard'; // New import for ResponderDashboard
 import './App.css';
 
 function App() {
@@ -27,7 +28,6 @@ function App() {
     setToken(null);
   };
 
-  
   return (
     <div>
       {token && window.location.pathname.startsWith('/admin') && (
@@ -39,6 +39,8 @@ function App() {
         <Route path="/signup" element={<Signup />} /> {/* New signup route */}
         <Route path="/citizen/register" element={<CitizenRegister />} />
         
+        {/* Responder Dashboard route */}
+        <Route path="/responder/dashboard" element={<ResponderDashboard />} /> {/* New route for ResponderDashboard */}
         
         {/* Default route */}
         <Route path="/" element={<Navigate to={token ? "/citizen/dashboard" : "/login"} />} />

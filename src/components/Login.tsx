@@ -19,7 +19,7 @@ function Login() {
   };
 
   return (
-    <div className="login-container"> {/* Updated className */}
+    <div className="login-container">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
